@@ -47,11 +47,10 @@ jobs:
         uses: actions/checkout@v3.1.0
 
       - name: Change file name
-        run: |
-            mv ${{github.workspace}}/${{inputs.path}}/${{inputs.gh_environment}}.tfvars  ${{github.workspace}}/${{inputs.path}}/${{inputs.gh_environment}}.auto.tfvars
-    
-        name: Setup Terraform
-        uses: hashicorp/setup-terraform@v2.0.2 
+        run: mv ${{github.workspace}}/${{inputs.path}}/${{inputs.gh_environment}}.tfvars  ${{github.workspace}}/${{inputs.path}}/${{inputs.gh_environment}}.auto.tfvars       
+            
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2.0.2
         with:
           terraform_version: ${{inputs.tf_version}}
           cli_config_credentials_token: ${{secrets.cli_config_credentials_token}}
@@ -60,18 +59,18 @@ jobs:
         id: init
         run: terraform init
 
-        name: Terraform Validate
+      - name: Terraform Validate
         id: valid
         run: terraform validate
 
-        name: Terraform Plan
+      - name: Terraform Plan
         id: plan
         run: terraform plan
         continue-on-error: true
 
-        name: Terraforom Plan Status
+      - name: Terraforom Plan Status
         if: steps.plan.outcome == 'failure'
         run: exit 1
 
-     
+    
       
