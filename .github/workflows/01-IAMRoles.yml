@@ -23,7 +23,7 @@ on:
 jobs:
   plan_dev:  # job name
     if: github.ref == 'refs/heads/FeatureBranch1' # is reference FeatureBranch1?
-    uses: tracman33/gitreusableworkflows/.github/workflows/aws_tf_plan.yml@FeatureBranch1    # run this plan on this branch
+    uses: tracman33/gitreusableworkflows/.github/workflows/aws_tf_plan.yml@FeatureBranch    # run this plan on this branch
     with:
       path: IAMRoles
       tf_vars_file: dev.tfvars
@@ -33,7 +33,7 @@ jobs:
 
   deploy_dev:
     needs: plan_dev
-    uses: tracman33/gitreusableworkflows/.github/workflows/aws_tf_apply.yml@FeatureBranch1
+    uses: tracman33/gitreusableworkflows/.github/workflows/aws_tf_apply.yml@FeatureBranch
     with: 
         path: IAMRoles
         tf_vars_file: dev.tfvars
