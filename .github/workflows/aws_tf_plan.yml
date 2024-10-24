@@ -27,7 +27,7 @@ on:
                 required: true
 
 jobs:
-  terraform-plan:
+  terraform-plan-1:
     runs-on: ubuntu-latest
 
     environment: ${{inputs.gh_environment}}
