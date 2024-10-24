@@ -22,7 +22,7 @@ on:
 
 jobs:
   plan_dev:  # job name
-    if: github.ref == 'refs/heads/FeatureBranch1' # is reference FeatureBranch1?
+    if: github.ref == 'refs/heads/FeatureBranch' # is reference FeatureBranch1?
     uses: tracman33/gitreusableworkflows/.github/workflows/aws_tf_plan.yml@FeatureBranch    # run this plan on this branch
     with:
       path: IAMRoles
