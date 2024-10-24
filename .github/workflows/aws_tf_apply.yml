@@ -21,7 +21,7 @@ on:
             description: "Specifies the Terraform TFVARS file"
             required: true
             type: string
-        secrets:
+    secrets:
             cli_config_credentials_token:
                 description: "cli config credentials token"
                 required: true
@@ -38,11 +38,6 @@ jobs:
       #AWS_REGION: ${{ secrets.AWS_REGION }}
       #AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
-
-      /* ### --------------------------------------------------
-      LIVE_DIR: live
-      BACKEND_TPL: backend.tf.tpl
-*/
     defaults: 
         run:
             shell: bash
