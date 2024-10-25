@@ -8,6 +8,29 @@ name: 01_IAMRoles
 
 on:
   workflow_dispatch: # manually invoke 
+  
+  pull_request:
+    types: [opened, synchronize, reopened]
+    # branches: [github-actions]
+    branches: [FeatureBranch, Main]
+    paths-ignore:
+      - "README.md"
+  push:
+    branches:
+      - "FeatureBranch"
+
+#      
+#  pull_request:
+#    paths:
+#      - "**.tf*"
+#      - ".github/workflows/deploy.yml"
+#  push:
+#    branches:
+#      - "main"
+#    paths:
+#      - "**.tf*"
+#      - ".github/workflows/deploy.yml"
+
     
   #pull_request:  
   #  paths:
