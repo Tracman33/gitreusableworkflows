@@ -51,7 +51,7 @@ jobs:
             mv ${{github.workspace}}/${{inputs.path}}/${{inputs.gh_environment}}.tfvars  ${{github.workspace}}/${{inputs.path}}/${{inputs.gh_environment}}.auto.tfvars
     
       - name: Setup Terraform
-        uses: hashicorp/setup terraform@v2.0.2 
+        uses: hashicorp/setup-terraform@v2.0.2 
         with:
           terraform_version: ${{inputs.tf_version}}
           cli_config_credentials_token: ${{secrets.cli_config_credentials_token}}
