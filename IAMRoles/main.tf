@@ -9,7 +9,7 @@ terraform {
     organization = "Trac"           # organization from terraform website
 
     workspaces {
-        name= "gitreusableworkflows"
+        name= "Multi-Deployment"
     }
   }
 }
