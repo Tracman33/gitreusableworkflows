@@ -60,7 +60,7 @@ jobs:
         run: terraform init
 
       - name: Terraform Validate
-        id: valid
+        id: validate
         run: terraform validate
 
       - name: Terraform Plan
