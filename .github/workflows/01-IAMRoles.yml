@@ -22,7 +22,7 @@ on:
 
 jobs:
   plan_dev:  # job name
-    if: github.ref == 'refs/heads/FeatureBranch' # is reference FeatureBranch?
+    if: github.ref == 'refs/heads/FeatureBranch' 
     uses: tracman33/gitreusableworkflows/.github/workflows/aws_tf_plan.yml@FeatureBranch    # run this plan on this branch
     with:
       path: IAMRoles
@@ -40,4 +40,3 @@ jobs:
         gh_environment: dev
     secrets:
       cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-      
