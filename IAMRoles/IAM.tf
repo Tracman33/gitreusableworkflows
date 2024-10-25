@@ -19,7 +19,7 @@ resource "aws_iam_role_policy" "test_policy" {
 }
 
 resource "aws_iam_role" "test_role" {
-  name = var.role_name #"test_role" #dev_test_role
+  name = var.role_name #"test_role" this references the var from dev.tfvars
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
